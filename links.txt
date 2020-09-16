@@ -1,0 +1,6 @@
+https://towardsdatascience.com/machine-learning-with-the-titanic-dataset-7f6909e58280
+https://towardsdatascience.com/predicting-the-survival-of-titanic-passengers-30870ccc7e8
+https://www.kaggle.com/c/titanic
+http://campus.lakeforest.edu/frank/FILES/MLFfiles/Bio150/Titanic/TitanicMETA.pdf
+https://markdown.es/multimarkdown/#Definiciones
+
