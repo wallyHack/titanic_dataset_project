@@ -12,13 +12,13 @@ información de los pasajeros que viajaban en el titanic; como su nombre, edad, 
 Como breve descripción podemos decir que el hundimiento del titanic fue uno de los naufragios
 mas infames y recordados de la historia. 
 El RMS Titanic fue un crucero de pasajeros británico que se hundió en el Océano Atlántico Norte
-y esto sucedio el 15 de abril de 1912, durante su viaje inaugural; y el RMS Titanic, considerado "insumergible", se hundió tras chocar con un iceberg. 
+y esto sucedió el 15 de abril de 1912, durante su viaje inaugural; y el RMS Titanic, considerado "insumergible", se hundió tras chocar con un iceberg. 
 Desafortunadamente, no había suficientes botes salvavidas para todos a bordo, lo que resultó en la muerte de 1502 de los 2224 pasajeros y la tripulación.
 Al parecer algunos grupos de personas tenían más probabilidades de sobrevivir que otros.
 Y por último destacamos que el Titanic era el barco más grande a flote en el momento y fue construido por el astillero Harland and Wolff en Belfast. 
 
 ##  Describe each of the variables
-## >> Variable, definición y/o posibles valores
+### >> Variable, definición y/o posibles valores
 PassengerId
 : Número de identificación al pasajero.
 
@@ -55,7 +55,7 @@ Cabin
 Embarked
 : Porción de embarcación. (C = Cherbourg; Q = Queenstown; S = Southampton).
 
-## Notas adicionales para algunas variables
+### Notas adicionales para algunas variables
 pclass
 : Indica el status o clase socioeconómica del pasajero.
 : 1 = Baja
@@ -71,10 +71,48 @@ parch
 : El dataset define las relaciones familiares de esta forma:
 : parent: mamá o papá.
 : child: hijo, hija, hermanastro y/o hermanastra.
-
+  
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+
+## Basic summary statics
+```{r, include=TRUE}
+# path of the dataset
+setwd("/home/chino/Documentos/17_materias_IS/1_mineria_de_datos/4_semana_miniproyecto1/1_titanic_dataset_project_es")
+
+# read the dataset
+titanic <- read.csv("titanic.csv", stringsAsFactors = FALSE)
+```
+
+```{r, include=TRUE}
+head(titanic)
+```
+
+```{r, include=TRUE}
+summary(titanic$PassengerId)
+```
+
+```{r, include=TRUE}
+summary(titanic$Pclass)
+```
+
+```{r, include=TRUE}
+summary(titanic$Age)
+```
+
+```{r, include=TRUE}
+summary(titanic$SibSp)
+```
+
+```{r, include=TRUE}
+summary(titanic$Parch)
+```
+
+```{r, include=TRUE}
+summary(titanic$Fare)
+```
+
 
 ## R Markdown
 

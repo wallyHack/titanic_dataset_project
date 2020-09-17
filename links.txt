@@ -3,4 +3,10 @@ https://towardsdatascience.com/predicting-the-survival-of-titanic-passengers-308
 https://www.kaggle.com/c/titanic
 http://campus.lakeforest.edu/frank/FILES/MLFfiles/Bio150/Titanic/TitanicMETA.pdf
 https://markdown.es/multimarkdown/#Definiciones
+https://markdown.es/sintaxis-markdown/#parrafos
+
+
+Notas
+- el summary de edad esta mal x que hay datos nulos
+- solo mostrar summary de atributos con valores númericos del dataset, quitar name, sex, ticket, cabin, embarked, survived.
 
