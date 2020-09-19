@@ -5,8 +5,14 @@ http://campus.lakeforest.edu/frank/FILES/MLFfiles/Bio150/Titanic/TitanicMETA.pdf
 https://markdown.es/multimarkdown/#Definiciones
 https://markdown.es/sintaxis-markdown/#parrafos
 
+Salto de linea
+https://www.youtube.com/watch?v=v0d73OqQpDM&ab_channel=BeSmartDeveloper
 
 Notas
-- el summary de edad esta mal x que hay datos nulos
+- el summary de edad esta mal por que hay datos nulos(Hay 177 valores nulos)
 - solo mostrar summary de atributos con valores númericos del dataset, quitar name, sex, ticket, cabin, embarked, survived.
 
+
+- dasaset ya analizado
+https://rpubs.com/josemauriciobaezadiaz/titanic
+https://rstudio-pubs-static.s3.amazonaws.com/252533_e8c2a605ca124e1e8b3e2aede0c08a82.html

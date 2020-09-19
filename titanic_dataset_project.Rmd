@@ -5,7 +5,7 @@ date: "15/9/2020"
 output: pdf_document
 ---
 
-## The data domain
+# The data domain
 Usaremos Machine Learning para crear un modelo que predice cuáles pasajeros sobrevivieron
 al naufragio del titanic y/o qué tipo de personas tenían mas probabilidades de sobrevivir, usando 
 información de los pasajeros que viajaban en el titanic; como su nombre, edad, sexo, clase socioeconómica, etc.
@@ -17,10 +17,10 @@ Desafortunadamente, no había suficientes botes salvavidas para todos a bordo, l
 Al parecer algunos grupos de personas tenían más probabilidades de sobrevivir que otros.
 Y por último destacamos que el Titanic era el barco más grande a flote en el momento y fue construido por el astillero Harland and Wolff en Belfast. 
 
-##  Describe each of the variables
-### >> Variable, definición y/o posibles valores
+#  Describe each of the variables
+## >> Variable, definición y/o posibles valores
 PassengerId
-: Número de identificación al pasajero.
+: Número de identificación del pasajero.
 
 Survived
 : Indica si el pasajero sobrevivió. 0 = No, 1 = Yes.
@@ -44,18 +44,18 @@ Parch
 : Número de padres y/o niños a bordo.
 
 Ticket
-: Número de boleto.
+: Número de boleto del pasajero.
 
 Fare
 : Tarifa de pasajero.
 
 Cabin
-: Número de cabina.
+: Número de cabina del pasajero.
 
 Embarked
-: Porción de embarcación. (C = Cherbourg; Q = Queenstown; S = Southampton).
+: Puerto de embarcación. (C = Cherbourg; Q = Queenstown; S = Southampton).
 
-### Notas adicionales para algunas variables
+## Notas adicionales para algunas variables
 pclass
 : Indica el status o clase socioeconómica del pasajero.
 : 1 = Baja
@@ -72,12 +72,8 @@ parch
 : parent: mamá o papá.
 : child: hijo, hija, hermanastro y/o hermanastra.
   
-```{r setup, include=FALSE}
+```{r setup, include=TRUE}
 knitr::opts_chunk$set(echo = TRUE)
-```
-
-## Basic summary statics
-```{r, include=TRUE}
 # path of the dataset
 setwd("/home/chino/Documentos/17_materias_IS/1_mineria_de_datos/4_semana_miniproyecto1/1_titanic_dataset_project_es")
 
@@ -85,51 +81,112 @@ setwd("/home/chino/Documentos/17_materias_IS/1_mineria_de_datos/4_semana_minipro
 titanic <- read.csv("titanic.csv", stringsAsFactors = FALSE)
 ```
 
+# Basic summary statics 
+- mostramos los primeros 10 registros del dataset
 ```{r, include=TRUE}
-head(titanic)
+head(titanic, 10)
+``` 
+
+\newpage
+- mostramos la estructura de los datos y/o los tipos de datos de los atributos 
+```{r, include=TRUE}
+str(titanic)
+```
+  
+- resumen con las medidas estadisticas básicas
+```{r, include=TRUE}
+summary(titanic)
+```
+
+\newpage
+## Exploring the Categorical Variables
+#### >> Gender Grouping
+```{r, include=TRUE}
+table(titanic$Sex)
+```
+
+#### Showing Percentages
+```{r, include=TRUE}
+sex_table <- table(titanic$Sex)
+sex_pct <- prop.table(sex_table) * 100
+round(sex_pct, digits = 1)
+```
+
+
+#### >> Embarked
+```{r, include=TRUE}
+table(titanic$Embarked)
+```
+
+#### Showing Percentages
+```{r, include=TRUE}
+embarked_table <- table(titanic$Embarked)
+embarked_pct <- prop.table(embarked_table) * 100
+round(embarked_pct, digits = 1)
+```
+
+\newpage
+#### >> PClass 
+```{r, include=TRUE}
+table(titanic$Pclass)
+```
+
+#### Showing Percentages
+```{r, include=TRUE}
+pclass_table <- table(titanic$Pclass)
+pclass_pct <- prop.table(pclass_table) * 100
+round(pclass_pct, digits = 1)
+```
+
+
+#### >> Survived
+```{r, include=TRUE}
+table(titanic$Survived)
+```
+
+#### Showing Percentages
+```{r, include=TRUE}
+survived_table <- table(titanic$Survived)
+survived_pct <- prop.table(survived_table) * 100
+round(survived_pct, digits = 1)
+```
+
+\newpage
+# Boxplots - Interpretation
+Este boxplot muestra que la edad promedio de los pasajeros que se encontraban en el titanic,
+es de 30 años aproximadamente y la edad media esta en 28 años.\
+Y también podemos apreciar varios outliers o anomalías, los cuáles son datos que exceden 
+el rango de nuestros valores normales.
+```{r, include=TRUE}
+boxplot(titanic$Age, main = "Titanic Passengers Age Boxplot", ylab ="Age")
+```
+
+Este boxplot nos muestra que la tárifa y/o costo promedio de los boletos de los pasajeros
+es de 32 aproximadamente y la tárifa media es de 14.45\
+También observamos varios outliers que exceden el rango de valores normales.
+```{r, include=TRUE}
+boxplot(titanic$Fare, main = "Titanic Passengers Fare Boxplot", ylab = "Fare")
+```
+
+\newpage
+# Histograms. Interpretation.
+```{r, include=TRUE}
+hist(titanic$Age, main = "Titanic Passenger Age Histogram", xlab = "Age", ylab = "Passengers")
 ```
 
 ```{r, include=TRUE}
-summary(titanic$PassengerId)
+hist(titanic$Fare, main = "Titanic Passenger Fare Histogram", xlab = "Fare", ylab = "Passengers")
+```
+
+\newpage
+```{r, include=TRUE}
+hist(titanic$Survived, main = "Titanic Passenger Survival Histogram", xlab = "Survival", ylab = "Passengers")
 ```
 
 ```{r, include=TRUE}
-summary(titanic$Pclass)
-```
+hist(titanic$Pclass, main = "Titanic Passenger Socioeconomic Class Histogram", xlab = "Socioeconomic Class", ylab = "Passengers")
 
-```{r, include=TRUE}
-summary(titanic$Age)
-```
-
-```{r, include=TRUE}
-summary(titanic$SibSp)
-```
-
-```{r, include=TRUE}
-summary(titanic$Parch)
-```
-
-```{r, include=TRUE}
-summary(titanic$Fare)
 ```
 
 
-## R Markdown
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
-```
-
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
