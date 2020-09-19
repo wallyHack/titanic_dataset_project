@@ -12,6 +12,9 @@ Notas
 - el summary de edad esta mal por que hay datos nulos(Hay 177 valores nulos)
 - solo mostrar summary de atributos con valores númericos del dataset, quitar name, sex, ticket, cabin, embarked, survived.
 
+Task to Do
+- hacer la descripción de los cuartiles
+
 
 - dasaset ya analizado
 https://rpubs.com/josemauriciobaezadiaz/titanic

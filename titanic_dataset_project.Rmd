@@ -153,7 +153,7 @@ round(survived_pct, digits = 1)
 
 \newpage
 # Boxplots - Interpretation
-Este boxplot muestra que la edad promedio de los pasajeros que se encontraban en el titanic,
+Este boxplot muestra que la edad promedio de los pasajeros que se encontraban en el titanic
 es de 30 años aproximadamente y la edad media esta en 28 años.\
 Y también podemos apreciar varios outliers o anomalías, los cuáles son datos que exceden 
 el rango de nuestros valores normales.
@@ -169,24 +169,35 @@ boxplot(titanic$Fare, main = "Titanic Passengers Fare Boxplot", ylab = "Fare")
 ```
 
 \newpage
-# Histograms. Interpretation.
+# Histograms-Interpretation and  Skew of the data-Interpretation.
+Observamos que la mayoría de los pasajeros era gente joven porque contaba con una edad 
+de 20 a 30 años. Y es una distribución **no simétrica** ya que esta sesgada hacia la derecha,
+porque la edad promedio es mayor a la mediana.
 ```{r, include=TRUE}
 hist(titanic$Age, main = "Titanic Passenger Age Histogram", xlab = "Age", ylab = "Passengers")
 ```
-
+\newpage
+Observamos que la mayoría de los pasajeros pagó un costo menor a 100 dolares en sus boletos 
+de abordar. Y es una distribución **no simétrica** ya que esta sesgada hacia la derecha porque la tárifa promedio es mayor a la tárifa media.
 ```{r, include=TRUE}
 hist(titanic$Fare, main = "Titanic Passenger Fare Histogram", xlab = "Fare", ylab = "Passengers")
 ```
 
 \newpage
+Observamos que la mayoría de los pasajeros que viajaban en el titanic murió y menos de la mitad
+sobrevivio. Mostrando las cifras 549 pasajeros murieron y 342 sobrevivieron.
 ```{r, include=TRUE}
 hist(titanic$Survived, main = "Titanic Passenger Survival Histogram", xlab = "Survival", ylab = "Passengers")
 ```
-
+\newpage
+Observamos que la mayoria de los pasajeros era gente acaudalada o con dinero ya que pertenerían a la
+clase alta y menos de la mitad de los pasajeros estaban entre la clase media y baja.
 ```{r, include=TRUE}
 hist(titanic$Pclass, main = "Titanic Passenger Socioeconomic Class Histogram", xlab = "Socioeconomic Class", ylab = "Passengers")
 
 ```
 
+\newpage
+# Quartiles and interpretation.
 
 
