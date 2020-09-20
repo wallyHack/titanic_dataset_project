@@ -199,5 +199,21 @@ hist(titanic$Pclass, main = "Titanic Passenger Socioeconomic Class Histogram", x
 
 \newpage
 # Quartiles and interpretation.
+Para poder realizar el cálculo de cuartiles e IQR se deben omitir y/o excluir los valores nulos.
+Observamos que la mayoría de los pasajeros se encuentra en un **rango de edad de 20 a 38 años.**
+Y esto hace que las edades máximas sean outliers o anomalías, ya que la mayoría de los datos están entre el 1er y 3er. cuartil; y esto lo dice el IQR.
+```{r, include=TRUE}
+quantile(titanic$Age,na.rm = TRUE)
+IQR(titanic$Age, na.rm = TRUE)
+```
+Para poder realizar el cálculo de cuartiles e IQR se deben omitir y/o excluir los valores nulos.
+Observamos que la mayoría de los pasajeros pagó una tárifa y/o costo de boleto de alrededor 
+**de 8 a 31 dolares.** Y esto hace que los costos elevados sean considerados outliers o anomalías.
+```{r, include=TRUE}
+quantile(titanic$Fare, na.rm = TRUE)
+IQR(titanic$Fare, na.rm = TRUE)
+```
+\newpage
+# Correlation. Interpretation.
 
 

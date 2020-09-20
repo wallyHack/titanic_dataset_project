@@ -12,10 +12,20 @@ Notas
 - el summary de edad esta mal por que hay datos nulos(Hay 177 valores nulos)
 - solo mostrar summary de atributos con valores númericos del dataset, quitar name, sex, ticket, cabin, embarked, survived.
 
+Excluyendo los valores faltantes de los cálculos
+mean(num.vec, na.rm = TRUE) # returns: [1] 2.75
+
+mean(num.vec[!is.na(num.vec)]) # returns: [1] 2.75
+
 Task to Do
-- hacer la descripción de los cuartiles
+- calcular la correlación y agregar su descripción
 
 
 - dasaset ya analizado
 https://rpubs.com/josemauriciobaezadiaz/titanic
 https://rstudio-pubs-static.s3.amazonaws.com/252533_e8c2a605ca124e1e8b3e2aede0c08a82.html
+
+
+Cómo los estudiantes manejaron los valores faltantes?
+Se escluyeron y/o omitieron en los cálculos ya que eran demasiados valores nulos para eliminar todo el registro 
+o para rellenar el valor.
