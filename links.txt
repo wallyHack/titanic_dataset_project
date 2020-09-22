@@ -25,6 +25,8 @@ Task to Do
 https://rpubs.com/josemauriciobaezadiaz/titanic
 https://rstudio-pubs-static.s3.amazonaws.com/252533_e8c2a605ca124e1e8b3e2aede0c08a82.html
 
+- tratar valores nulos en R
+https://www.diegocalvo.es/eliminar-na-o-valores-nulos-en-r/
 
 Cómo los estudiantes manejaron los valores faltantes?
 Se escluyeron y/o omitieron en los cálculos ya que eran demasiados valores nulos para eliminar todo el registro 
