@@ -17,6 +17,8 @@ Desafortunadamente, no había suficientes botes salvavidas para todos a bordo, l
 Al parecer algunos grupos de personas tenían más probabilidades de sobrevivir que otros.
 Y por último destacamos que el Titanic era el barco más grande a flote en el momento y fue construido por el astillero Harland and Wolff en Belfast. 
 
+![Titanic](/home/chino/Documentos/17_materias_IS/1_mineria_de_datos/4_semana_miniproyecto1/2_titanic_dataset_project_us/titanic.jpg)
+
 #  Describe each of the variables
 ## >> Variable, definición y/o posibles valores
 PassengerId
@@ -99,7 +101,7 @@ summary(titanic)
 ```
 
 \newpage
-## Exploring the Categorical Variables
+### Exploring the Categorical Variables
 #### >> Gender Grouping
 ```{r, include=TRUE}
 table(titanic$Sex)
@@ -111,7 +113,6 @@ sex_table <- table(titanic$Sex)
 sex_pct <- prop.table(sex_table) * 100
 round(sex_pct, digits = 1)
 ```
-
 
 #### >> Embarked
 ```{r, include=TRUE}
@@ -161,8 +162,9 @@ el rango de nuestros valores normales.
 boxplot(titanic$Age, main = "Titanic Passengers Age Boxplot", ylab ="Age")
 ```
 
+
 Este boxplot nos muestra que la tárifa y/o costo promedio de los boletos de los pasajeros
-es de 32 aproximadamente y la tárifa media es de 14.45\
+es de 32 dolares aproximadamente y la tárifa media es de 14.45\
 También observamos varios outliers que exceden el rango de valores normales.
 ```{r, include=TRUE}
 boxplot(titanic$Fare, main = "Titanic Passengers Fare Boxplot", ylab = "Fare")
@@ -176,6 +178,7 @@ porque la edad promedio es mayor a la mediana.
 ```{r, include=TRUE}
 hist(titanic$Age, main = "Titanic Passenger Age Histogram", xlab = "Age", ylab = "Passengers")
 ```
+
 \newpage
 Observamos que la mayoría de los pasajeros pagó un costo menor a 100 dolares en sus boletos 
 de abordar. Y es una distribución **no simétrica** ya que esta sesgada hacia la derecha porque la tárifa promedio es mayor a la tárifa media.
@@ -189,6 +192,7 @@ sobrevivio. Mostrando las cifras 549 pasajeros murieron y 342 sobrevivieron.
 ```{r, include=TRUE}
 hist(titanic$Survived, main = "Titanic Passenger Survival Histogram", xlab = "Survival", ylab = "Passengers")
 ```
+
 \newpage
 Observamos que la mayoria de los pasajeros era gente acaudalada o con dinero ya que pertenerían a la
 clase alta y menos de la mitad de los pasajeros estaban entre la clase media y baja.
